@@ -2,11 +2,10 @@ import React, { useState } from "react";
 import { Star } from "lucide-react";
 import FilterComponent from "./FilterComponent";
 import { learningMaterials } from "../data/learningMaterials";
-import {formatDate} from "../lib/FormatDate"
+import { formatDate } from "../lib/FormatDate";
 export default function LearningMaterialsComponent() {
   const [matter, setMaterials] = useState(learningMaterials);
   const [filter, setFilter] = useState("");
-
 
   console.log("filter", filter);
 
@@ -18,9 +17,6 @@ export default function LearningMaterialsComponent() {
     } else {
       return 0;
     }
-
-
-    
   });
 
   // const handlerStar = (id) => {
@@ -35,15 +31,15 @@ export default function LearningMaterialsComponent() {
 
   function handleFav(id) {
     setMaterials((prevState) => {
-      return prevState.map((items) => 
+      return prevState.map((items) =>
         items.id == id ? { ...items, isFavorite: !items.isFavorite } : items
-      )
+      );
       // console.log("newMa   tter",newMater)
       // setMaterials(newMater)
     });
   }
   return (
-    <div className="bg-white drop-shadow-lg rounded-2xl  h-[80vh] overflow-y-auto scrollbar-hidden">
+    <div className="bg-white drop-shadow-lg rounded-2xl  h-[80vh] overflow-y-auto scrollbar-hidden  ">
       {/* calling filter component */}
       <FilterComponent setFilter={setFilter} />
 
@@ -56,8 +52,8 @@ export default function LearningMaterialsComponent() {
       {/* materials list */}
 
       {sortedMatter.map((materials) => (
-        <div key={materials.id} className="space-y-3">
-          <div className="bg-light-gray px-4 py-2 flex gap-5 items-center">
+        <div key={materials.id} className="mb-2  bg-gray-100 rounded-2xl">
+          <div className=" p-4 flex gap-5 items-center">
             {materials.image && (
               <img
                 src={materials.image}
@@ -68,7 +64,7 @@ export default function LearningMaterialsComponent() {
               />
             )}
 
-            <div className="w-full">
+            <div className="w-full ">
               <div className="flex justify-between">
                 <p className="text-base font-medium">{materials.title}</p>
                 <Star

@@ -10,7 +10,7 @@ export default function FilterComponent({setFilter}) {
   };
 
   return (
-    <form className="mt-4 mx-4 flex justify-between" onSubmit={handleSubmit}>
+    <form className="mt-4 mx-4 flex justify-between" onSubmit={handleSubmit} >
       <div className="relative w-full ">
         <select
           onChange={handleFilter}

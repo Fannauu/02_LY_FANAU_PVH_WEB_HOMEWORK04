@@ -23,4 +23,5 @@
    /* Config custom scrollbar */
   --scrollbar-width: none; /* Firefox */
   --scrollbar-display: none; /* Webkit browsers */
+  --scroll-container::-webkit-scrollbar: none;
 }
