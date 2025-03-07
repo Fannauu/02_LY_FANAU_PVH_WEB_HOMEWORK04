@@ -1,0 +1,8 @@
+.scrollbar-hidden {
+  scrollbar-width: var(--scrollbar-width); /* Firefox */
+  -ms-overflow-style: var(--scrollbar-width); /* IE/Edge */
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: var(--scrollbar-display); /* Chrome, Safari */
+}
